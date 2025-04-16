@@ -2,6 +2,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-family: "Nunito", sans-serif;
 }
 
 ul {
@@ -17,6 +18,10 @@ body {
 main {
   width: 390px;
   margin-top: 26px;
+}
+
+button {
+  cursor: pointer;
 }
 
 .todo-section {
@@ -67,4 +72,46 @@ main {
 #todo-list-actions-container {
   display: flex;
   justify-content: space-between;
+}
+
+.todo-item-container {
+  border: 1px solid #e1e1e1;
+  padding: 12px 8px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.todo-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.todo-item > input:checked ~ label {
+  text-decoration: line-through;
+}
+
+.todo-item-actions {
+  display: flex;
+  gap: 8px;
+}
+
+.todo-item-action-btn {
+  width: 20px;
+  height: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: none;
+  background-color: transparent;
+  border-radius: 5px;
+}
+
+.edit-btn {
+  background-color: #0085ff;
+}
+
+.delete-btn {
+  background-color: #ff0000;
 }

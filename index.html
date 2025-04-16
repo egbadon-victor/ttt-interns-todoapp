@@ -3,14 +3,20 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" href="./index.css" />
     <title>Todo App</title>
   </head>
   <body>
     <main>
       <section id="todo-input-container" class="todo-section">
-        <input type="text" />
-        <button>
+        <input type="text" id="todo-input" />
+        <button id="todo-input-btn">
           <img src="./assets/icons/plus.svg" alt="plus" />
         </button>
       </section>
@@ -20,13 +26,9 @@
         <button class="todo-list-action">Pending</button>
       </section>
       <section class="todo-section">
-        <ul>
-          <li>Task 1</li>
-          <li>Task 2</li>
-          <li>task 3</li>
-        </ul>
+        <ul id="todo-list"></ul>
       </section>
-      <input type="text" />
     </main>
+    <script src="./index.js"></script>
   </body>
 </html>
