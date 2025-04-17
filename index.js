@@ -2,6 +2,8 @@ const todoInput = document.getElementById("todo-input");
 const todoInputButton = document.getElementById("todo-input-btn");
 const todoList = document.getElementById("todo-list");
 
+const todos = [];
+
 const renderTodoListItem = (todoListItem) => `<li class="todo-item-container">
             <div class="todo-item">
               <input type="checkbox" name="todo-item" />
@@ -17,9 +19,31 @@ const renderTodoListItem = (todoListItem) => `<li class="todo-item-container">
             </div>
           </li>`;
 
-todoInputButton.addEventListener("click", () => {
-  const value = todoInput.value;
+const renderTodoList = () => {
+  todoList.innerHTML = "";
+  todos.map((todo) => {
+    todoList.innerHTML += renderTodoListItem(todo.value);
+  });
 
-  todoList.innerHTML += renderTodoListItem(value);
+  // For those more comfortable with for loops
+  //   for (let i = 0; i < todos.length; i++) {
+  //     todoList.innerHTML += renderTodoListItem(todos[i].value);
+  //   }
+};
+
+const addTodoItem = () => {
+  const inputValue = todoInput.value;
+
+  if (inputValue !== "") {
+    todos.push({
+      value: inputValue,
+      completed: false,
+    });
+    renderTodoList();
+  }
   todoInput.value = "";
-});
+};
+
+todoInputButton.addEventListener("click", addTodoItem);
+
+renderTodoList();
