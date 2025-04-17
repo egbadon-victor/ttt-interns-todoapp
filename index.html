@@ -21,9 +21,16 @@
         </button>
       </section>
       <section id="todo-list-actions-container" class="todo-section">
-        <button class="todo-list-action todo-list-action-active">All</button>
-        <button class="todo-list-action">Completed</button>
-        <button class="todo-list-action">Pending</button>
+        <button
+          class="todo-list-action todo-list-action-active"
+          data-filter="all"
+        >
+          All
+        </button>
+        <button class="todo-list-action" data-filter="completed">
+          Completed
+        </button>
+        <button class="todo-list-action" data-filter="pending">Pending</button>
       </section>
       <section class="todo-section">
         <ul id="todo-list"></ul>
